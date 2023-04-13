@@ -8,6 +8,9 @@
     --clr-bg: #f5f5f5;
     --clr-accent: #007672;
     --clr-light: #FFFFFF;
+    --fs-small: 16px;
+    --fs-regular: 28px;
+    --fs-big: 40px;
 }
 
 body{
@@ -16,11 +19,126 @@ body{
 
 .header{
     background-color: var(--clr-light);
+    height: 100px;
+    display: flex;
+    align-items:center;
+    justify-content: center;
+    margin-bottom: 40px;
 }
-aside {
-    float: right;
-    font-style: italic;
+.header__title{
+    color: var(--clr-accent);
+    justify-items: center;
 }
+
+.title__text{
+    font-size: var(--fs-regular);
+}
+
+/* .logo{
+    position: absolute;
+    left: 15px;
+} */
+
+.content__wrapper{
+    margin: 0 auto;
+    display: flex;
+    align-items:center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.content__galery{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items:center;
+    justify-content: center;
+    order: 2;
+    gap: 15px
+}
+picture{
+    max-width: 500px;
+    margin: 0 8px;
+}
+.content__galery--img {
+    overflow: hidden;
+    object-fit: cover;
+    width: 100%;
+}
+
+.content__nav{
+    order: 1;
+    margin-bottom: 25px;
+}
+
+.nav__list{
+    text-align: center;
+    width: 200px;
+}
+
+.nav__list--item{
+    height: 25px;
+    background-color:var(--clr-accent);
+    color: var(--clr-light);
+    margin-bottom: 10px;
+}
+
 a { text-decoration: none;}
+
 a:link {color: inherit;}
+
 a:visited {color: inherit;}
+
+ul{
+    list-style: none;
+}
+
+.footer{
+    background-color:var(--clr-accent);
+    color:var(--clr-light);
+    margin-top: 25px;
+}
+
+.footer__wrapper{
+    display: flex;
+    justify-content: space-between;
+    align-items:center;
+    height: 100px;
+    margin: auto 20px;
+}
+
+@media(min-width: 768px){
+    .title__text{
+        font-size: var(--fs-big);
+    }
+
+    .content__wrapper{
+        flex-direction: row;
+        justify-content: space-between;
+        margin: 0 30px;
+    }
+
+    .content__galery{
+        order: 1;
+    }
+
+    .content__nav{
+        order: 1;
+        align-self: baseline;
+    }
+
+    picture{
+        max-width: 400px;
+        margin: 0 8px;
+    }
+}
+
+@media(min-width: 1024px){
+    .title{
+        font-size: var(--fs-big);
+    }
+
+    picture{
+        max-width: 350px;
+    }
+}
